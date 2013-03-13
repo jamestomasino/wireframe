@@ -1,35 +1,50 @@
 {
-   "background": {
-      "scripts": [ "js/background.js" ]
-   },
-   "browser_action": {
-      "__default_popup": "html/popup.html",
-      "__default_popup_comment": "Commenting the popup since we don't need it for now",
-      "default_icon": "imgs/icon.png",
-      "default_title": "Set Wireframe Mode on/off",
-      "icons": [ "imgs/icon.png" ],
-      "name": "Wireframe Mode"
-   },
-   "content_scripts": [ {
-      "__css_comment": "These are injected in the order they appear in this array, before any DOM is constructed or displayed for the page.",
-      "__js_comment": "In the case of 'document_end', the files are injected immediately after the DOM is complete, but before subresources like images and frames have loaded. In the case of 'document_start', the files are injected after any files from css, but before any other DOM is constructed or any other script is run.",
-      "all_frames": true,
-      "css": [ "css/tab.css" ],
-      "js": [ "js/parseuri.js", "js/tab.js" ],
-      "matches": [ "http://*/*", "https://*/*", "file://*/*" ],
-      "run_at": "document_start"
-   } ],
-   "description": "Browse the web without distractions via simple text based pages.",
-   "icons": {
-      "128": "icons/icon_128x128.png",
-      "16": "icons/icon_16x16.png",
-      "48": "icons/icon_48x48.png"
-   },
-   "key": "",
-   "manifest_version": 2,
-   "name": "Wireframe Mode",
-   "permissions": [ "tabs", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*" ],
-   "update_url": "http://clients2.google.com/service/update2/crx",
-   "version": "0.0.1",
-   "web_accessible_resources": [ "imgs/bg_blank_1px.png", "imgs/bg_lines_01.png", "imgs/bg_lines_02.png", "imgs/bg_lines_03.png", "imgs/bg_lines_03_grey.png", "imgs/bg_lines_04.png", "imgs/favicon.ico" ]
+	"manifest_version": 2,
+	"name": "Wireframe Mode",
+	"description": "Convert any webpage into a wireframe.",
+	"version": "0.0.1",
+	"update_url": "http://clients2.google.com/service/update2/crx",
+
+	"permissions": [
+		"tabs",
+		"webRequest",
+		"webRequestBlocking",
+		"http://*/*",
+		"https://*/*"
+	],
+
+	"browser_action": {
+		"default_icon": "imgs/icon.png",
+		"default_title": "Set Wireframe Mode on/off",
+		"icons": [ "imgs/icon.png" ],
+		"name": "Wireframe Mode"
+	},
+
+	"web_accessible_resources": [
+		"imgs/bg_blank_1px.png",
+		"imgs/favicon.ico",
+		"css/redacted-regular.eot",
+		"css/redacted-regular.ttf",
+		"css/redacted-regular.svg",
+		"css/redacted-regular.woff"
+	],
+
+	"background": {
+		"scripts": [ "js/background.js" ]
+	},
+
+	"content_scripts": [ {
+		"all_frames": true,
+		"css": [ "css/tab.css" ],
+		"js": [ "js/parseuri.js", "js/tab.js" ],
+		"matches": [ "http://*/*", "https://*/*", "file://*/*" ],
+		"run_at": "document_start"
+	} ],
+
+	"icons": {
+		"128": "icons/icon_128x128.png",
+		"16": "icons/icon_16x16.png",
+		"48": "icons/icon_48x48.png"
+	}
+
 }
