@@ -1,0 +1,47 @@
+{
+	"manifest_version": 2,
+	"name": "Wireframe Mode",
+	"description": "Convert any webpage into a wireframe.",
+	"version": "0.0.1",
+	"update_url": "http://clients2.google.com/service/update2/crx",
+
+	"permissions": [
+		"tabs",
+		"webRequest",
+		"webRequestBlocking",
+		"http://*/*",
+		"https://*/*"
+	],
+
+	"browser_action": {
+		"default_icon": "imgs/icon.png",
+		"default_title": "Set Wireframe Mode on/off",
+		"icons": [ "imgs/icon.png" ],
+		"name": "Wireframe Mode"
+	},
+
+	"web_accessible_resources": [
+		"imgs/bg_blank_1px.png",
+		"imgs/favicon.ico",
+		"fonts/redacted-regular.woff"
+	],
+
+	"background": {
+		"scripts": [ "js/background.js" ]
+	},
+
+	"content_scripts": [ {
+		"all_frames": true,
+		"css": [ "css/tab.css" ],
+		"js": [ "js/parseuri.js", "js/tab.js" ],
+		"matches": [ "http://*/*", "https://*/*", "file://*/*" ],
+		"run_at": "document_start"
+	} ],
+
+	"icons": {
+		"128": "icons/icon_128x128.png",
+		"16": "icons/icon_16x16.png",
+		"48": "icons/icon_48x48.png"
+	}
+
+}
