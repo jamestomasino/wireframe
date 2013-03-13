@@ -3,7 +3,13 @@
 {
 	background-color: #F9F9F9 !important;
 	-webkit-filter: grayscale(100%) !important;
-	font-family: 'redacted' !important;
+	font-family: "Redacted" !important;
+}
+
+.__wireframe__ *, 
+.__wireframe__ * *
+{
+	font-family: "Redacted" !important;
 }
 
 .__wireframe__ img,

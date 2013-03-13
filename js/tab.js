@@ -34,17 +34,25 @@
 
 		domReady = true;
 
+		// set up web font Cherry PIE
+		var style=document.createElement('style');
+		style.id="redacted-style";
+		style.innerHTML=
+			"@font-face { font-family: 'Redacted'; src: local('☺'), url('"+chrome.extension.getURL("/fonts/redacted-regular.woff")+"') format('woff'); }\n";
+		if (document.head)
+			document.head.appendChild(style);
+
+
 		// Inject Font
-		var styleNode           = document.createElement ("style");
-		styleNode.type          = "text/css";
-		styleNode.textContent   =  "@font-face { font-family: 'redacted';";
-		styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.eot") + "');"
-		styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.eot") + "?#iefix') format('embedded-opentype'),"
-		styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.woff") + "') format('woff'),"
-		styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.ttf") + "') format('ttf'),"
-		styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.svg") + "') format('svg');"
-		styleNode.textContent   += " }";
-		document.head.appendChild (styleNode)
+		//var styleNode           = document.createElement ("style");
+		//styleNode.type          = "text/css";
+		//styleNode.textContent   =  "@font-face { font-family: 'Redacted';";
+		//styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.eot") + "');"
+		//styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.woff") + "') format('woff'),"
+		//styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.ttf") + "') format('ttf'),"
+		//styleNode.textContent   += "src: url('" + chrome.extension.getURL ("css/redacted-regular.svg#filename") + "') format('svg');"
+		//styleNode.textContent   += " }";
+		//document.head.appendChild (styleNode)
 
 		this.setBodyType();
 	}

@@ -23,10 +23,7 @@
 	"web_accessible_resources": [
 		"imgs/bg_blank_1px.png",
 		"imgs/favicon.ico",
-		"css/redacted-regular.eot",
-		"css/redacted-regular.ttf",
-		"css/redacted-regular.svg",
-		"css/redacted-regular.woff"
+		"fonts/redacted-regular.woff"
 	],
 
 	"background": {
